@@ -15,15 +15,28 @@
 
         .container {
             text-align: center;
-            background-color: #007FFF;
+            background-color: #3299CC;
             color: #fff;
             padding: 20px;
+            border-radius: 60px; /* Adicione esta linha para arredondar os cantos */
         }
 
-        .container img {
-            max-width: 100px;
-            height: auto;
-            margin-right: 20px;
+        .cabecalho {
+            background-image: url('caminho-para-sua-imagem-de-boas-vindas.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px; /* Defina a altura desejada para o cabeçalho de boas-vindas */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .cabecalho h1 {
+            font-size: 36px; /* Defina o tamanho da fonte desejado */
+            margin: 0;
         }
 
         .formulario {
@@ -35,15 +48,15 @@
             flex-direction: column;
         }
 
-        .formulario input[type="text"], .formulario input[type="number"], .formulario h2, .formulario select, .formulario textarea, .formulario button, .convidados input[type="text"], .convidados select {
+        .formulario input[type="text"], .formulario h2, .formulario select, .formulario textarea, .formulario button, .convidados input[type="text"], .convidados select {
             padding: 10px;
             width: 200px;
             margin: 10px 0;
         }
-        
 
         .formulario h2 {
             margin-right: 10px;
+            text-align: center; /* Centraliza o texto */
         }
 
         .convidados {
@@ -56,24 +69,43 @@
             padding: 10px;
             border: 1px solid #ccc;
         }
+        .cabecalho img {
+            border-radius: 40px; /* Adicione esta linha para arredondar os cantos da imagem */
+}
+
 
         .rodape {
             margin-top: 20px;
             text-align: center;
         }
+
+        /* Adicione espaço entre a imagem do cabeçalho e o vídeo */
+        .video {
+            margin-top: 20px;
+            
+        }
+
+        .video iframe {
+            border-radius: 30px; /* Arredonda os cantos do vídeo iframe */
+}
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="cabecalho">
-            <img src="caminho-para-sua-imagem.jpg" alt="Minha Imagem">
-            <h1>CONVITE BVP ENGENHARIA</h1>
+            <img src="banner.jpg" alt="Imagem de Boas-Vindas">
+        </div>
+
+        <!-- Adicione o vídeo do YouTube aqui -->
+        <div class="video">
+            <iframe width="706" height="370" src="https://www.youtube.com/embed/-y--jgpzWpM?si=X-NpbLneLH2Xzba7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <div class="formulario">
-            <h2>COLABORADOR</h2>
+            <h2>COLABORADOR<h2>
             <input type="text" placeholder="Nome">
-            <input type="number" placeholder="Idade do Colaborador" min="0">
+            
             <h3>Quantos convidados deseja adicionar?</h3>
             <select id="numero-convidados">
                 <option value="0">Nenhum</option>
@@ -89,7 +121,7 @@
                 <h3>Observações Importantes:</h3>
                 <p>Esta é uma observação importante sobre o evento.</p>
             </div>
-            <button type="button" id="btn-salvar">Salvar</button>
+            <button type="button" id="btn-salvar">Enviar</button>
         </div>
 
         <div class="rodape">
@@ -136,7 +168,7 @@
         });
 
         btnSalvar.addEventListener("click", () => {
-            // Aqui você pode adicionar a lógica para enviar os dados, incluindo as observações, para o banco de dados
+            // adicionar a lógica para enviar os dados, incluindo as observações, para o banco de dados
             // Isso pode ser feito usando uma chamada AJAX ou outro método apropriado.
             // Por enquanto, deixei apenas um alerta para demonstração.
             alert("Dados salvos com sucesso!");
@@ -144,4 +176,6 @@
     </script>
 </body>
 </html>
+
+
 
